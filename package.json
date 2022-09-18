@@ -8,15 +8,10 @@
   },
   "repository": {
     "type": "git",
-    // "url": "git+https://github.com/hossainemruz/toha.git"
     "url": "git+https://github.com/michjnich/hugo-toha-michjnich-com.git"
   },
   "author": "Emruz Hossain",
   "license": "MIT",
-  // "bugs": {
-  //   "url": "https://github.com/hossainemruz/toha/issues"
-  // },
-  // "homepage": "https://github.com/hossainemruz/toha#readme",
   "devDependencies": {
     "autoprefixer": "^10.4.8",
     "postcss": "^8.4.16",
