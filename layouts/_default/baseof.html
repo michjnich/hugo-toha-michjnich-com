@@ -1,46 +1,51 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>{{ .Page.Title }}</title>
-    <!------ ADD COMMON HEADERS -------->
-    {{- partial "header.html" . -}}
-    {{ template "_internal/opengraph.html" . }}
 
-    <!------ ADD PAGE SPECIFIC HEADERS ------->
-    {{ block "header" . }} {{ end }}
+<head>
+  <title>{{ .Page.Title }}</title>
+  <!------ ADD COMMON HEADERS -------->
+  {{- partial "header.html" . -}}
+  {{ template "_internal/opengraph.html" . }}
 
-    <!--================= add analytics if enabled =========================-->
-    {{- partial "analytics.html" . -}}
+  <!------ ADD PAGE SPECIFIC HEADERS ------->
+  {{ block "header" . }} {{ end }}
 
-  </head>
+  <!--================= add analytics if enabled =========================-->
+  {{- partial "analytics.html" . -}}
 
-  <body data-spy="scroll" data-target="#TableOfContents" data-offset="80">
-    <div class="container-fluid bg-dimmed wrapper">
-      <!----- ADD NAVBAR --------------->
-      {{ block "navbar" . }} {{ end }}
+</head>
 
-      <!----- ADD SIDEBAR --------------->
-      {{ block "sidebar" . }} {{ end }}
+<body data-spy="scroll" data-target="#TableOfContents" data-offset="80">
+  <div class="container-fluid bg-dimmed wrapper">
+    <!----- ADD NAVBAR --------------->
+    {{ block "navbar" . }} {{ end }}
 
-      <!----- ADD PAGE CONTENT --------->
-      {{ block "content" . }} {{ end }}
+    <!----- ADD SIDEBAR --------------->
+    {{ block "sidebar" . }} {{ end }}
 
-      <!----- ADD TABLE OF CONTENTS ----------->
-      {{ block "toc" . }} {{ end }}
-    </div>
+    <!----- ADD PAGE CONTENT --------->
+    {{ block "content" . }} {{ end }}
 
-    <!------- ADD FOOTER ------------>
-    {{ $footerTemplate:= site.Params.footer.template | default "footer.html" }}
-    {{- partial $footerTemplate . -}}
+    <!----- ADD TABLE OF CONTENTS ----------->
+    {{ block "toc" . }} {{ end }}
+  </div>
 
-    <!------- ADD COMMON SCRIPTS ------->
-    {{ partial "scripts.html" . }}
+  <!------- ADD FOOTER ------------>
+  {{ $footerTemplate:= site.Params.footer.template | default "footer.html" }}
+  {{- partial $footerTemplate . -}}
 
-    <!------- ADD PAGE SPECIFIC SCRIPTS ------>
-    {{ block "scripts" . }} {{ end }}
+  <!------- ADD COMMON SCRIPTS ------->
+  {{ partial "scripts.html" . }}
 
-    <!------ IF WANTED, ADD SUPPORT LINKS -------->
-    {{- partial "misc/support.html" . -}}
+  <!------- ADD PAGE SPECIFIC SCRIPTS ------>
+  {{ block "scripts" . }} {{ end }}
 
-  </body>
+  <!------ IF WANTED, ADD SUPPORT LINKS -------->
+  {{- partial "misc/support.html" . -}}
+
+  <!-- STATCOUNTR -->
+  {{ partial "statcounter.html" . }}
+
+</body>
+
 </html>
