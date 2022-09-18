@@ -30,12 +30,12 @@
     {{ block "toc" . }} {{ end }}
   </div>
 
-  <!-- STATCOUNTER -->
-  {{ partial "statcounter.html" . }}
-
   <!------- ADD FOOTER ------------>
   {{ $footerTemplate:= site.Params.footer.template | default "footer.html" }}
   {{- partial $footerTemplate . -}}
+
+  <!-- STATCOUNTER -->
+  {{ partial "statcounter.html" . }}
 
   <!------- ADD COMMON SCRIPTS ------->
   {{ partial "scripts.html" . }}
