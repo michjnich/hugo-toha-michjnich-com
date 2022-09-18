@@ -9,7 +9,7 @@
   "repository": {
     "type": "git",
     // "url": "git+https://github.com/hossainemruz/toha.git"
-    // "url": "git+https://github.com/michjnich/hugo-toha-michjnich-com.git"
+    "url": "git+https://github.com/michjnich/hugo-toha-michjnich-com.git"
   },
   "author": "Emruz Hossain",
   "license": "MIT",
